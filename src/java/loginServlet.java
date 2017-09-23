@@ -30,14 +30,15 @@ public class loginServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String usuario=request.getParameter("usuario");
             String clave=request.getParameter("clave");   
+            String admin = "administrador";
             String query = "select * from usuario"; 
             Statement stmt=conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             
             while (rs.next()){
                 if(rs.getString("nombre").equals(usuario) && rs.getString("password").equals(clave)){
-                    if(rs.getString("tipo").equals("administrador")){
-                        session.setAttribute("tipoUsuario", "administrador");
+                    if(rs.getString("tipo").equals(admin)){
+                        session.setAttribute("tipoUsuario", admin);
                         session.setAttribute("nombreUsuario", usuario);
                         response.sendRedirect("index.jsp");
                     }
