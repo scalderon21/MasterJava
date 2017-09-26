@@ -15,7 +15,7 @@ public class conexion {
         String dbDriver = "com.mysql.jdbc.Driver";
         String dbUri = "jdbc:mysql://localhost/"+miBD;
         String dbUser = "root";
-        String dbPass = "";
+        String dbPass = "avaras08";
         Connection conn=null;
         try {
             try {
