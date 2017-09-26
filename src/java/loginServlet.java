@@ -41,6 +41,7 @@ public class loginServlet extends HttpServlet {
                         session.setAttribute("tipoUsuario", admin);
                         session.setAttribute("nombreUsuario", usuario);
                         response.sendRedirect("index.jsp");
+                        //
                     }
                     session.setAttribute("nombreUsuario", usuario);
                     response.sendRedirect("index.jsp");
